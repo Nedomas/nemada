@@ -8,7 +8,7 @@ class IndexComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPart: 'hat',
+      selectedPart: 'top',
       hat: null,
       shirt: null,
       boots: null,
@@ -32,7 +32,7 @@ class IndexComponent extends Component {
     // }
 
     return (
-      <section className='container'>
+      <section className=''>
         <Collage
           {...this.state}
           selectPart={(part) => this.selectPart(part)}

@@ -22,9 +22,23 @@ export default class Search extends Component {
     });
   }
 
+  urlWithParams(urlString, params={}) {
+    var url = new URL(urlString);
+    var searchParams = new URLSearchParams();
+    Object.keys(params).forEach((key) => {
+      searchParams.append(key, params[key]);
+    });
+    url.search = searchParams.toString();
+    return url.toString();
+  }
+
   requestToBackend(text) {
-    return fetch('/users.json')
+    return fetch(this.urlWithParams('http://backenderis.96.lt/api.php', { query: text }))
       .then(function(response) {
+        return response.json()
+      })
+      .then(function(json) {
+        return json;
         return {
           items: [
             {

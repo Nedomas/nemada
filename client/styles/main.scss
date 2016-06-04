@@ -7,6 +7,14 @@ body {
   // font-family: "Helvetica Neue", serif;
 }
 
+.logo {
+  margin: 30px 50px;
+  height: 40px;
+  background: url(http://healthitecture.com/img/logo-black.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 .search-box {
   // background-color: #2A353B;
   border-left: 5px solid #d9534f;
@@ -35,4 +43,23 @@ body {
   .search-items {
     padding-top: 80px;
   }
+}
+
+.collage {
+  padding-top: 30px;
+}
+
+.collage-item {
+  height: 200px;
+  width: 300px;
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+
+  border: hsla(198, 17%, 42%, .1);
+}
+
+.item-selected {
+  border: 2px solid #B48D3D;
 }

@@ -6,7 +6,9 @@ import Part from 'components/Part/Part';
 export default class Collage extends Component {
   render() {
     return (
-      <section className='col-xs-6'>
+      <section className='col-xs-6 collage'>
+        <div className='logo'/>
+
         <Part {...this.props} part='top'/>
         <Part {...this.props} part='bottom'/>
         <Part {...this.props} part='shoes'/>

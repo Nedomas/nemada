@@ -7,17 +7,20 @@ export default class Part extends Component {
   }
 
   render() {
+    var isSelected = this.props.selectedPart == this.props.part ? 'item-selected' : '';
     let item = this.getItem();
-    var look = `module box-${this.props.part}`;
     if (item) {
+      var itemClass = `collage-item module ${isSelected}`;
+
       return (
-        <div className="module img-box" onClick={() => this.props.selectPart(this.props.part) }>
-                <img className="img-responsive" src={item.imageUrl}/>
+        <div className={itemClass} style={{ backgroundImage: `url("${item.imageUrl}")` }} onClick={() => this.props.selectPart(this.props.part) }>
         </div>
       );
     } else {
+      var itemClass = `collage-item module box-${this.props.part} ${isSelected}`;
+
       return (
-        <div className={look} onClick={() => this.props.selectPart(this.props.part) }>
+        <div className={itemClass} onClick={() => this.props.selectPart(this.props.part) }>
           {this.props.part}
         </div>
       );
