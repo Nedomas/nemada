@@ -1,6 +1,38 @@
-$background: lightblue;
+@import url(https://fonts.googleapis.com/css?family=Poppins:400,600,500);
+// $background: lightblue;
 
 body {
-  background: $background;
-  font-family: "Helvetica Neue", serif;
+  // background: $background;
+  font-family: 'Poppins', sans-serif;
+  // font-family: "Helvetica Neue", serif;
+}
+
+.search-box {
+  // background-color: #2A353B;
+  border-left: 5px solid #d9534f;
+  min-height: 100vh;
+  padding: 80px 50px;
+
+  .search-container {
+  }
+
+  .search-input {
+    outline: none;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .search-button {
+    height: 50px;
+    font-size: 18px;
+    line-height: 46px;
+    background-color: #3F515A;
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  .search-items {
+    padding-top: 80px;
+  }
 }

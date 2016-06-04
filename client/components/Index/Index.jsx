@@ -33,7 +33,6 @@ class IndexComponent extends Component {
 
     return (
       <section className='container'>
-        SELECTED_PART: {this.state.selectedPart}
         <Collage
           {...this.state}
           selectPart={(part) => this.selectPart(part)}
