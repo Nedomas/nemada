@@ -48,16 +48,19 @@ export default class Search extends Component {
 
   render() {
     return (
-      <section className='col-xs-6'>
-        <input value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
-        <button onClick={() => this.search()}>Search</button>
-
-        {_.map(this.state.items, (item) => {
-          return (
-            <div onClick={() => this.props.selectItem(item)}>{item.title}</div>
-          );
-        })}
-      </section>
+      <div className='col-xs-6 well'>
+        <div>
+          <input value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
+          <button onClick={() => this.search()}>Search</button>
+        </div>
+          {_.map(this.state.items, (item) => {
+            return (
+              <div className="module img-box" onClick={() => this.props.selectItem(item)}>
+                <img className="img-responsive" src={item.imageUrl}/>
+              </div>
+            );
+          })}
+      </div>
     );
   }
 }

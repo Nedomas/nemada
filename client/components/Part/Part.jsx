@@ -8,16 +8,16 @@ export default class Part extends Component {
 
   render() {
     let item = this.getItem();
-
+    var look = `module box-${this.props.part}`;
     if (item) {
       return (
-        <div onClick={() => this.props.selectPart(this.props.part) }>
+        <div className="module" onClick={() => this.props.selectPart(this.props.part) }>
           {item.title}
         </div>
       );
     } else {
       return (
-        <div onClick={() => this.props.selectPart(this.props.part) }>
+        <div className={look} onClick={() => this.props.selectPart(this.props.part) }>
           {this.props.part}
         </div>
       );

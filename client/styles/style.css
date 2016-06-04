@@ -1,0 +1,32 @@
+.module {
+	text-align: center;
+	font-size: 30px;
+	display: block;
+	background-color : white;
+	margin: 10px;
+}
+.img-box {
+	max-width: 100px;
+	max-height: 100px;
+	display: inline-block;
+}
+.box-hat {
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+}
+.box-top {
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+}
+.box-bottom {
+	width: 200px;
+	height: 200px;
+	line-height: 200px;
+}
+.box-shoes {
+	width: 100px;
+	height: 100px;
+	line-height: 100px;
+}
