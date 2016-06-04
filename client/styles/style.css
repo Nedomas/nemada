@@ -9,6 +9,7 @@
 	max-width: 100px;
 	max-height: 100px;
 	display: inline-block;
+	padding: 10px;
 }
 .box-hat {
 	width: 100px;

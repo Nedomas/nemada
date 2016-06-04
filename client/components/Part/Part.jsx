@@ -11,8 +11,8 @@ export default class Part extends Component {
     var look = `module box-${this.props.part}`;
     if (item) {
       return (
-        <div className="module" onClick={() => this.props.selectPart(this.props.part) }>
-          {item.title}
+        <div className="module img-box" onClick={() => this.props.selectPart(this.props.part) }>
+                <img className="img-responsive" src={item.imageUrl}/>
         </div>
       );
     } else {
