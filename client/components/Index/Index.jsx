@@ -8,12 +8,22 @@ class IndexComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPart: 'top',
+      selectedPart: 'hat',
+      hat: null,
+      shirt: null,
+      boots: null,
     }
   }
   selectPart(part) {
     this.setState({ selectedPart: part });
   }
+
+  selectItem(item) {
+    var newState = _.cloneDeep(this.state);
+    newState[this.state.selectedPart] = item;
+    this.setState(newState);
+  }
+
   render() {
     // if (this.props.items.length === 0) {
     //   return (
@@ -24,8 +34,11 @@ class IndexComponent extends Component {
     return (
       <section className='container'>
         SELECTED_PART: {this.state.selectedPart}
-        <Collage selectedPart={this.state.selectedPart} selectPart={(part) => this.selectPart(part)}/>
-        <Search />
+        <Collage
+          {...this.state}
+          selectPart={(part) => this.selectPart(part)}
+        />
+        <Search selectItem={(item) => this.selectItem(item)}/>
       </section>
     );
   }
