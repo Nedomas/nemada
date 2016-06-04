@@ -8,7 +8,7 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchField: 'labas',
+      searchField: '',
     }
   }
 
@@ -87,7 +87,7 @@ export default class Search extends Component {
     return (
       <div className='col-xs-6 search-box'>
         <div className='search-container row'>
-          <input className='search-input col-xs-8' value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
+          <input placeholder='Search for an item...' className='search-input col-xs-8' value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
           <button className='search-button col-xs-4' onClick={() => this.search()}>Find it</button>
         </div>
         <div className='search-items'>
