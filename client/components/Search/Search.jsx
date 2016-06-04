@@ -54,7 +54,7 @@ export default class Search extends Component {
 
         {_.map(this.state.items, (item) => {
           return (
-            <div>{item.title}</div>
+            <div onClick={() => this.props.selectItem(item)}>{item.title}</div>
           );
         })}
       </section>

@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 
+import Part from 'components/Part/Part';
+
 export default class Collage extends Component {
   render() {
     return (
       <section className='col-xs-6'>
-        <div onClick={() => this.props.selectPart('top') }>
-          TOP
-        </div>
-        <div onClick={() => this.props.selectPart('shirt') }>
-          SHIRT
-        </div>
-        <div onClick={() => this.props.selectPart('boots') }>
-          BOOTS
-        </div>
+        <Part {...this.props} part='hat'/>
+        <Part {...this.props} part='shirt'/>
+        <Part {...this.props} part='boots'/>
       </section>
     );
   }
