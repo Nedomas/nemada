@@ -41,7 +41,7 @@ export default class Collage extends Component {
 
         <div className='add-container'>
           <button className='add-to-blog' onClick={() => this.save()}>
-            {this.state.saved ? 'Saved!' : 'Add to blog'}
+            {this.state.saved ? 'Done! Code was copied to your clipboard' : 'Add to blog'}
           </button>
         </div>
       </section>
