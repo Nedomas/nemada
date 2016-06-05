@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import 'whatwg-fetch';
 
+import algoliasearch from 'algoliasearch';
+import algoliasearchHelper from 'algoliasearch-helper';
+
 import SearchItem from 'components/SearchItem/SearchItem';
 
 export default class Search extends Component {
@@ -17,9 +20,35 @@ export default class Search extends Component {
   }
 
   search() {
-    this.requestToBackend(this.state.searchField).then((result) => {
-      this.setState({ items: result.items });
+    var client = algoliasearch('UEUR0SJM1R', '34444257c29a257d876c94f369f49fcc');
+    var helper = algoliasearchHelper(client, 'nemada');
+
+    helper.on('result', (content) => {
+      const result = _.map(content.hits, (item) => {
+        return {
+         imageUrl: item['merchant_image_url'],
+         title: item['product_name'],
+         description: item['description'],
+         price: item['display_price'],
+         affiliateLink: item['_highlightResult']['aw_deep_link']['value']
+        };
+      });
+      // debugger;
+      // console.log(content);
+
+      this.setState({ items: result });
     });
+
+    // helper.on('error', function(content) {
+    //   debugger;
+    // });
+
+    // debugger;
+    helper.setQuery(this.state.searchField).search();
+
+    // this.requestToBackend(this.state.searchField).then((result) => {
+    //   this.setState({ items: result.items });
+    // });
   }
 
   urlWithParams(urlString, params={}) {
@@ -106,7 +135,7 @@ export default class Search extends Component {
         </div>
             {_.map(this.state.items, (item) => {
               return (
-                <figure className="effect">
+                <figure key={item.title} className="effect">
                   <SearchItem {...this.props} item={item} />
                   <figcaption>
                   <p>Price: {item.price}</p>
