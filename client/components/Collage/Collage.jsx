@@ -27,9 +27,7 @@ export default class Collage extends Component {
       <section className={`collage col-md-6 ${selectedPartExistsClass}`} id="box-collage">
         <div className='logo-container row'>
           <div className='logo-text col-xs-6 col-xs-offset-3'>
-            IFITYOU,
-            <br/>
-            BABE
+            I FIT YOU
           </div>
         </div>
 

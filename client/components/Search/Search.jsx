@@ -131,14 +131,12 @@ export default class Search extends Component {
           </div>
 
           <div className='logo-text col-xs-6'>
-            IFITYOU,
-            <br/>
-            BABE
+            I FIT YOU
           </div>
         </div>
 
         <div className='question'>
-          Find you {this.props.selectedPart}
+          Find your {this.props.selectedPart}
         </div>
 
         <div className='search-container row'>
