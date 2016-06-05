@@ -19,7 +19,7 @@ export default class Search extends Component {
     this.setState({ searchField: e.target.value });
   }
 
-  search() {
+  search(part) {
     var client = algoliasearch('UEUR0SJM1R', '34444257c29a257d876c94f369f49fcc');
     var helper = algoliasearchHelper(client, 'nemada');
 
@@ -33,22 +33,15 @@ export default class Search extends Component {
          affiliateLink: item['_highlightResult']['aw_deep_link']['value']
         };
       });
-      // debugger;
-      // console.log(content);
 
       this.setState({ items: result });
     });
 
-    // helper.on('error', function(content) {
-    //   debugger;
-    // });
+    helper.setQuery(`${this.state.searchField} ${part}`).search();
+  }
 
-    // debugger;
-    helper.setQuery(this.state.searchField).search();
-
-    // this.requestToBackend(this.state.searchField).then((result) => {
-    //   this.setState({ items: result.items });
-    // });
+  componentWillReceiveProps(nextProps) {
+    this.search(nextProps.selectedPart);
   }
 
   urlWithParams(urlString, params={}) {

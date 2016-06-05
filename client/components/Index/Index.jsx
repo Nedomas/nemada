@@ -9,11 +9,12 @@ class IndexComponent extends Component {
     super(props);
     this.state = {
       selectedPart: null,
-      hat: null,
-      dress: null,
+      top: null,
+      skirt: null,
       shoes: null,
     }
   }
+
   selectPart(part) {
     this.setState({ selectedPart: part });
   }

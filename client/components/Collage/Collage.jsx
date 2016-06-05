@@ -33,8 +33,8 @@ export default class Collage extends Component {
           Choose a part of your outfit
         </div>
 
-        <Part {...this.props} part='hat'/>
-        <Part {...this.props} part='dress'/>
+        <Part {...this.props} part='top'/>
+        <Part {...this.props} part='skirt'/>
         <Part {...this.props} part='shoes'/>
 
         <div className='add-container'>
