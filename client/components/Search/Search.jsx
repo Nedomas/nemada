@@ -112,10 +112,16 @@ export default class Search extends Component {
 
     return (
       <div className='search-box'>
-        <div className='logo-container'>
-          IFITYOU,
-          <br/>
-          BABE
+        <div className='logo-container row'>
+          <div onClick={() => this.props.back() } className='logo-back col-xs-3'>
+            Back
+          </div>
+
+          <div className='logo-text col-xs-6'>
+            IFITYOU,
+            <br/>
+            BABE
+          </div>
         </div>
 
         <div className='question'>
@@ -124,7 +130,7 @@ export default class Search extends Component {
 
         <div className='search-container row'>
           <input className='col-xs-12 search-field' placeholder='Search for an item...' className='search-input col-xs-8' value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
-          <button className='search-button col-xs-12' onClick={() => this.search()}>Find it</button>
+          <button className='search-button col-xs-12' onClick={() => this.search(this.props.selectedPart)}>Find it</button>
         </div>
             {_.map(this.state.items, (item) => {
               return (

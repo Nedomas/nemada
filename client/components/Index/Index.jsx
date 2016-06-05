@@ -19,6 +19,10 @@ class IndexComponent extends Component {
     this.setState({ selectedPart: part });
   }
 
+  back() {
+    this.setState({ selectedPart: '' });
+  }
+
   selectItem(item) {
     var newState = _.cloneDeep(this.state);
     newState[this.state.selectedPart] = item;
@@ -41,7 +45,9 @@ class IndexComponent extends Component {
         />
         <Search
           {...this.state}
-          selectItem={(item) => this.selectItem(item)}/>
+          selectItem={(item) => this.selectItem(item)}
+          back={() => this.back()}
+        />
       </section>
     );
   }
