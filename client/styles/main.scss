@@ -20,6 +20,7 @@ body {
   border-left: 5px solid #d9534f;
   min-height: 100vh;
   padding: 80px 50px;
+  overflow: auto;
 
   .search-container {
   }
@@ -47,6 +48,7 @@ body {
 
 .collage {
   padding-top: 30px;
+  overflow: hidden;
 }
 
 .collage-item {

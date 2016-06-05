@@ -90,13 +90,16 @@ export default class Search extends Component {
           <input placeholder='Search for an item...' className='search-input col-xs-8' value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
           <button className='search-button col-xs-4' onClick={() => this.search()}>Find it</button>
         </div>
-        <div className='search-items'>
-          {_.map(this.state.items, (item) => {
-            return (
-              <SearchItem {...this.props} item={item} />
-            );
-          })}
-        </div>
+            {_.map(this.state.items, (item) => {
+              return (
+                <figure className="effect">
+                  <SearchItem {...this.props} item={item} />
+                  <figcaption>
+                  <p>Price: {item.price}</p>
+                  </figcaption>
+                </figure>
+              );
+            })}
       </div>
     );
   }
