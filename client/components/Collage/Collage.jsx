@@ -23,10 +23,12 @@ export default class Collage extends Component {
 
     return (
       <section className='collage' id="box-collage">
-        <div className='logo-container'>
-          IFITYOU,
-          <br/>
-          BABE
+        <div className='logo-container row'>
+          <div className='logo-text col-xs-6 col-xs-offset-3'>
+            IFITYOU,
+            <br/>
+            BABE
+          </div>
         </div>
 
         <div className='question'>

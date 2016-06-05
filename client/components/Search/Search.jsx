@@ -105,6 +105,11 @@ export default class Search extends Component {
       })
   }
 
+  selectItem(item) {
+    this.setState({ searchField: '' });
+    this.props.selectItem(item);
+  }
+
   render() {
     if (!this.props.selectedPart) {
       return (<div/>);
@@ -135,7 +140,7 @@ export default class Search extends Component {
             {_.map(this.state.items, (item) => {
               return (
                 <figure key={item.title} className="effect">
-                  <SearchItem {...this.props} item={item} />
+                  <SearchItem {...this.props} item={item} selectItem={(item) => this.selectItem(item)}/>
                   <figcaption>
                   <p>Price: {item.price}</p>
                   </figcaption>

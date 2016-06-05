@@ -31,12 +31,6 @@ class IndexComponent extends Component {
   }
 
   render() {
-    // if (this.props.items.length === 0) {
-    //   return (
-    //     <p ref="empty">Index is empty.</p>
-    //   );
-    // }
-
     return (
       <section className=''>
         <Collage
