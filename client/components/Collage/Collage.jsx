@@ -17,12 +17,14 @@ export default class Collage extends Component {
   }
 
   render() {
-    if (this.props.selectedPart) {
-      return (<div/>);
-    }
+    // if (this.props.selectedPart) {
+    //   return (<div/>);
+    // }
+
+    var selectedPartExistsClass = this.props.selectedPart ? 'selected-part-collage' : '';
 
     return (
-      <section className='collage col-md-6' id="box-collage">
+      <section className={`collage col-md-6 ${selectedPartExistsClass}`} id="box-collage">
         <div className='logo-container row'>
           <div className='logo-text col-xs-6 col-xs-offset-3'>
             IFITYOU,
