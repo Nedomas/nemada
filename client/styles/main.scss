@@ -15,23 +15,60 @@ body {
   background-repeat: no-repeat;
 }
 
+.question {
+  text-align: center;
+  font-size: 24px;
+  // background: url(/client/styles/question.jpeg);
+  // background-size: cover;
+  // background-position: center;
+  background-color: #B48D3D;
+  color: #fff;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 30px 50px;
+  letter-spacing: 1px;
+}
+
+.logo-container {
+  background-color: #3F515A;
+  color: #fff;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 20px;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
 .search-box {
   // background-color: #2A353B;
-  border-left: 5px solid #d9534f;
-  min-height: 100vh;
-  padding: 80px 50px;
+  // border-left: 5px solid #d9534f;
+  // min-height: 100vh;
+  // padding: 80px 50px;
   overflow: auto;
 
   .search-container {
+    padding: 40px;
+  }
+
+  .search-field {
+    // border: 1px solid hsla(198, 17%, 42%, .1);
   }
 
   .search-input {
-    outline: none;
+    outline: 1px solid hsla(198, 17%, 42%, .1);
+    width: 100%;
     height: 50px;
     font-size: 22px;
   }
 
+  .img-box {
+    width: 30%;
+    margin: 20px auto;
+  }
+
   .search-button {
+    margin-top: 10px;
     height: 50px;
     font-size: 18px;
     line-height: 46px;
@@ -47,21 +84,58 @@ body {
 }
 
 .collage {
-  padding-top: 30px;
   overflow: hidden;
 }
 
 .collage-item {
-  height: 200px;
-  width: 300px;
-  margin: 0 auto;
+  height: 150px;
+  line-height: 150px;
+  width: 100%;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: top;
+  text-transform: uppercase;
+  font-size: 26px;
 
-  border: hsla(198, 17%, 42%, .1);
+  // border: hsla(198, 17%, 42%, .1);
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    border: none;
+    // background-color: hsla(198, 17%, 42%, .3);
+    text-align: center;
+  }
+}
+
+.collage-item-filled {
+  margin: 50px 0;
+}
+
+.box-dress {
+  background-color: hsla(198, 17%, 42%, .5);
+}
+
+.add-to-blog {
+  margin: 30px auto;
+  height: 50px;
+  font-size: 18px;
+  width: 80%;
+  line-height: 46px;
+  background-color: #3F515A;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+}
+
+.add-container {
+  width: 100%;
+  text-align: center;
 }
 
 .item-selected {
   border: 2px solid #B48D3D;
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    border: none;
+  }
 }

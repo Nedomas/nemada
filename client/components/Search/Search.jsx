@@ -84,11 +84,25 @@ export default class Search extends Component {
   }
 
   render() {
+    if (!this.props.selectedPart) {
+      return (<div/>);
+    }
+
     return (
-      <div className='col-xs-6 search-box'>
+      <div className='search-box'>
+        <div className='logo-container'>
+          IFITYOU,
+          <br/>
+          BABE
+        </div>
+
+        <div className='question'>
+          Find you {this.props.selectedPart}
+        </div>
+
         <div className='search-container row'>
-          <input placeholder='Search for an item...' className='search-input col-xs-8' value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
-          <button className='search-button col-xs-4' onClick={() => this.search()}>Find it</button>
+          <input className='col-xs-12 search-field' placeholder='Search for an item...' className='search-input col-xs-8' value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
+          <button className='search-button col-xs-12' onClick={() => this.search()}>Find it</button>
         </div>
             {_.map(this.state.items, (item) => {
               return (

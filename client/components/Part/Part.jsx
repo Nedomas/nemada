@@ -10,7 +10,7 @@ export default class Part extends Component {
     var isSelected = this.props.selectedPart == this.props.part ? 'item-selected' : '';
     let item = this.getItem();
     if (item) {
-      var itemClass = `collage-item module ${isSelected}`;
+      var itemClass = `collage-item collage-item-filled module ${isSelected}`;
 
       return (
         <div className={itemClass} style={{ backgroundImage: `url("${item.imageUrl}")` }} onClick={() => this.props.selectPart(this.props.part) }>

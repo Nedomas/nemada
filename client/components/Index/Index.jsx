@@ -8,10 +8,10 @@ class IndexComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPart: 'top',
+      selectedPart: null,
       hat: null,
-      shirt: null,
-      boots: null,
+      dress: null,
+      shoes: null,
     }
   }
   selectPart(part) {
@@ -21,6 +21,7 @@ class IndexComponent extends Component {
   selectItem(item) {
     var newState = _.cloneDeep(this.state);
     newState[this.state.selectedPart] = item;
+    newState.selectedPart = null;
     this.setState(newState);
   }
 
@@ -37,7 +38,9 @@ class IndexComponent extends Component {
           {...this.state}
           selectPart={(part) => this.selectPart(part)}
         />
-        <Search selectItem={(item) => this.selectItem(item)}/>
+        <Search
+          {...this.state}
+          selectItem={(item) => this.selectItem(item)}/>
       </section>
     );
   }
