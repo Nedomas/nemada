@@ -157,3 +157,15 @@ body {
   // display: inline-block;
   // width: 80%;
 }
+
+.unselected-part {
+  @media all and (max-width : 992px) {
+    display: none;
+  }
+}
+
+.initial {
+  background-image: url(https://images.unsplash.com/photo-1457972703743-4a6585c42ed8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=74687657e88c033beccfe06f4ab18936);
+  background-size: cover;
+  min-height: 130vh;
+}

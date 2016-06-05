@@ -22,7 +22,7 @@ export default class Collage extends Component {
     }
 
     return (
-      <section className='collage' id="box-collage">
+      <section className='collage col-md-6' id="box-collage">
         <div className='logo-container row'>
           <div className='logo-text col-xs-6 col-xs-offset-3'>
             IFITYOU,

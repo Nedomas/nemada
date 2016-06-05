@@ -110,13 +110,21 @@ export default class Search extends Component {
     this.props.selectItem(item);
   }
 
+  initial() {
+    return (
+      <div className='initial col-md-6'>
+      </div>
+    );
+  }
   render() {
     if (!this.props.selectedPart) {
-      return (<div/>);
+      return this.initial();
     }
 
+    var selectedPartExistsClass = this.props.selectedPart ? '' : 'unselected-part';
+
     return (
-      <div className='search-box'>
+      <div className={`search-box col-md-6 ${selectedPartExistsClass}`}>
         <div className='logo-container row'>
           <div onClick={() => this.props.back() } className='logo-back col-xs-3'>
             Back
@@ -137,11 +145,13 @@ export default class Search extends Component {
           <input className='col-xs-12 search-field' placeholder='Search for an item...' className='search-input col-xs-8' value={this.state.searchField} onChange={(e) => this.changeSearch(e)}/>
           <button className='search-button col-xs-12' onClick={() => this.search(this.props.selectedPart)}>Find it</button>
         </div>
-            {_.map(this.state.items, (item) => {
-              return (
-                <SearchItem key={item.title} {...this.props} item={item} selectItem={(item) => this.selectItem(item)}/>
-              );
-            })}
+        <div>
+          {_.map(this.state.items, (item) => {
+            return (
+              <SearchItem key={item.title} {...this.props} item={item} selectItem={(item) => this.selectItem(item)}/>
+            );
+          })}
+        </div>
       </div>
     );
   }
